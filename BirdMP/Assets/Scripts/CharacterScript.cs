@@ -9,6 +9,10 @@ public class CharacterScript : MonoBehaviourPun
     //[PunRPC]
     public void AddVelocity()
     {
+        float r1 = Random.Range(0f, 4f);
+        float r2 = Random.Range(2f, 5f);
+        Debug.Log(r1);
+        Debug.Log(r2);
         rb.MovePosition(new Vector2(0, 0));
         rb.AddForce(Vector2.up);
     }
