@@ -9,6 +9,7 @@ public class CharacterScript : MonoBehaviourPun
     //[PunRPC]
     public void AddVelocity()
     {
+        rb.MovePosition(new Vector2(0, 0));
         rb.AddForce(Vector2.up);
     }
     // Start is called before the first frame update
