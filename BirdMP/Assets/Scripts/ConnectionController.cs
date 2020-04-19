@@ -47,4 +47,21 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         Debug.Log("GAME START");
     }
 
+
+    // Start is called before the first frame update
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PhotonView.Get(this).RPC("ChatMessage", RpcTarget.All, PhotonNetwork.LocalPlayer.NickName);
+        }
+    }
+    [PunRPC]
+    void ChatMessage(string a)
+    {
+        Debug.Log(string.Format("Player {0} ", a));
+    }
+
 }
