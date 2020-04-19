@@ -9,6 +9,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 {
     public Button connectButton;
     public InputField roomNameField;
+    
 
     public override void OnConnectedToMaster()
     {
@@ -47,9 +48,12 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         // Debug.Log(PhotonNetwork.);
         Debug.Log("GAME START");
         GameObject holder=null;
-        if(PhotonNetwork.IsMasterClient)
-            holder=PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
-        GetComponent<CharacterController>().playerObject = holder;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            holder = PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
+            PhotonView.Get(this).RPC("SetPlayerObject", RpcTarget.All, holder);
+        }
+
     }
 
 
@@ -62,11 +66,11 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         {
             PhotonView.Get(this).RPC("ChatMessage", RpcTarget.All, PhotonNetwork.LocalPlayer.NickName);
         }
-    }
-    [PunRPC]
-    void ChatMessage(string a)
-    {
-       // Debug.Log(string.Format("Player {0} ", a));
     }*/
+    [PunRPC]
+    void SetPlayerObject(GameObject gj)
+    {
+        GetComponent<CharacterController>().playerObject = gj;
+    }
 
 }
