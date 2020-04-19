@@ -28,7 +28,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LocalPlayer.NickName = PhotonNetwork.PlayerList.Length.ToString();
-        Debug.Log("Player Joined: " + PhotonNetwork.PlayerList[0].NickName);
+        Debug.Log("Player Joined: " + PhotonNetwork.LocalPlayer.NickName);
         if (PhotonNetwork.PlayerList.Length == 2)
         {
             StartGame();
