@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class NetworkController : MonoBehaviourPunCallbacks
 {
-    public GameObject testPrefab;
     // Start is called before the first frame update
     void Start()
     {

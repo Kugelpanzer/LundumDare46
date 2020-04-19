@@ -27,12 +27,24 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        Debug.Log("Logovanje uspelo");
+        PhotonNetwork.LocalPlayer.NickName = PhotonNetwork.PlayerList.Length.ToString();
+        Debug.Log("Player Joined: " + PhotonNetwork.PlayerList[0].NickName);
+        if (PhotonNetwork.PlayerList.Length == 2)
+        {
+            StartGame();
+        }
+
         PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
     }
     public void OnConnectedToServer()
     {
         Debug.Log("CONNECTED TO SERVER ???");
+    }
+
+    private void StartGame()
+    {
+        // Debug.Log(PhotonNetwork.);
+        Debug.Log("GAME START");
     }
 
 }
