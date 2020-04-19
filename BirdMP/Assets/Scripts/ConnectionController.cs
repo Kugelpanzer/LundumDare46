@@ -47,11 +47,11 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     {
         // Debug.Log(PhotonNetwork.);
         Debug.Log("GAME START");
-        GameObject holder=null;
+       // GameObject holder=null;
         if (PhotonNetwork.IsMasterClient)
         {
-            holder = PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
-            PhotonView.Get(this).RPC("SetPlayerObject", RpcTarget.All, holder);
+            PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
+            
         }
 
     }
@@ -67,11 +67,11 @@ public class ConnectionController : MonoBehaviourPunCallbacks
             PhotonView.Get(this).RPC("ChatMessage", RpcTarget.All, PhotonNetwork.LocalPlayer.NickName);
         }
     }*/
-    [PunRPC]
+    /*[PunRPC]
     void SetPlayerObject(GameObject gj)
     {
         Debug.Log("radiddd");
         GetComponent<CharacterController>().playerObject = gj;
-    }
+    }*/
 
 }
