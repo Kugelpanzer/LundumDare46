@@ -17,10 +17,10 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 
     public void Connect()
     {
-        PhotonNetwork.JoinRandomRoom();
-        //PhotonNetwork.JoinRoom(roomNameField.text);
+        //PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.JoinRoom(roomNameField.text);
     }
-    public override void OnJoinRandomFailed(short returnCode, string message)
+    public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.Log("Failed to join server");
         PhotonNetwork.CreateRoom(roomNameField.text, new Photon.Realtime.RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)2 });
