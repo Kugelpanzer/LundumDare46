@@ -24,7 +24,7 @@ public class NetworkController : MonoBehaviourPunCallbacks
         Debug.Log(PhotonNetwork.CloudRegion);
         PhotonNetwork.AutomaticallySyncScene = true;
         
-        PhotonNetwork.Instantiate("testPrefab",new Vector3(),new Quaternion());
+       // PhotonNetwork.Instantiate("testPrefab",new Vector3(),new Quaternion());
 
     }
 }
