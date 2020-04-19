@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviourPun
 {
+    public GameObject playerObject;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -15,6 +16,7 @@ public class CharacterController : MonoBehaviourPun
     [PunRPC]
     void ChatMessage(string a)
     {
+        playerObject.GetComponent<CharacterScript>().AddVelocity();
         Debug.Log(string.Format("Player {0} ", a));
     }
 }

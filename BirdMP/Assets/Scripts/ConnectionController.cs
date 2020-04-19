@@ -34,7 +34,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
             PhotonView.Get(this).RPC("StartGame", RpcTarget.All);
         }
 
-        PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
+        
     }
     public void OnConnectedToServer()
     {
@@ -46,6 +46,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     {
         // Debug.Log(PhotonNetwork.);
         Debug.Log("GAME START");
+        GetComponent<CharacterController>().playerObject=PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
     }
 
 
