@@ -70,6 +70,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     [PunRPC]
     void SetPlayerObject(GameObject gj)
     {
+        Debug.Log("radiddd");
         GetComponent<CharacterController>().playerObject = gj;
     }
 
