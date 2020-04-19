@@ -31,7 +31,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         Debug.Log("Player Joined: " + PhotonNetwork.LocalPlayer.NickName);
         if (PhotonNetwork.PlayerList.Length == 2)
         {
-            StartGame();
+            PhotonView.Get(this).RPC("StartGame", RpcTarget.All);
         }
 
         PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
@@ -41,6 +41,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         Debug.Log("CONNECTED TO SERVER ???");
     }
 
+    [PunRPC]
     private void StartGame()
     {
         // Debug.Log(PhotonNetwork.);
@@ -51,7 +52,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -61,7 +62,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     [PunRPC]
     void ChatMessage(string a)
     {
-        Debug.Log(string.Format("Player {0} ", a));
-    }
+       // Debug.Log(string.Format("Player {0} ", a));
+    }*/
 
 }
