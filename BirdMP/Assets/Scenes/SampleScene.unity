@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 1664337541}
   - component: {fileID: 1664337542}
   - component: {fileID: 1664337543}
-  - component: {fileID: 1664337544}
+  - component: {fileID: 1664337545}
   m_Layer: 0
   m_Name: NetworkController
   m_TagString: Untagged
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectButton: {fileID: 888932688}
   roomNameField: {fileID: 1335475500}
---- !u!114 &1664337544
+--- !u!114 &1664337545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1076,9 +1076,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1664337540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ba3f0b1a87dbe469ce9f1bed496815, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2077292212
 GameObject:
   m_ObjectHideFlags: 0
