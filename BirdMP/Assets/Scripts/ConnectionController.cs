@@ -46,7 +46,8 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     {
         // Debug.Log(PhotonNetwork.);
         Debug.Log("GAME START");
-        GetComponent<CharacterController>().playerObject=PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
+        if(PhotonNetwork.IsMasterClient)
+            GetComponent<CharacterController>().playerObject=PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
     }
 
 
