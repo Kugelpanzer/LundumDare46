@@ -28,6 +28,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Logovanje uspelo");
+        PhotonNetwork.Instantiate("testPrefab", new Vector3(), new Quaternion());
     }
     public void OnConnectedToServer()
     {
